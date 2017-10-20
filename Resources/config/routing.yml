@@ -1,0 +1,3 @@
+#AbsenceClient_index:
+#    path: /
+#    defaults: { _controller: ChapleanAbsenceClientBundle:Default:index }

@@ -1,0 +1,12 @@
+parameters:
+    chaplean_absence_io_client.api.access_token: '%chaplean_absence_io_client.access_token%'
+    chaplean_absence_io_client.api.url: 'https://app.absence.io/api/v2/'
+
+services:
+    absence_io_api:
+        class: Chaplean\Bundle\AbsenceIoClientBundle\Api\AbsenceIoApi
+        arguments:
+            - '@guzzle.client.absence_io_api'
+            - '@event_dispatcher'
+            - '%chaplean_absence_io_client.api.url%'
+            - '%chaplean_absence_io_client.api.access_token%'
