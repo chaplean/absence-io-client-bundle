@@ -48,7 +48,7 @@ class AbsenceIoApi extends AbstractApi
         $this->get('absence', 'absences/{id}')
             ->urlParameters(
                 [
-                    'id' => Parameter::id()
+                    'id' => Parameter::string()
                 ]
             );
 

@@ -2,6 +2,8 @@
 
 namespace Chaplean\Bundle\AbsenceIoClientBundle\EventListener;
 
+use Dflydev\Hawk\Client\ClientBuilder;
+use Dflydev\Hawk\Credentials\Credentials;
 use EightPoints\Bundle\GuzzleBundle\Events\GuzzleEventListenerInterface;
 use EightPoints\Bundle\GuzzleBundle\Events\PreTransactionEvent;
 
@@ -75,7 +77,10 @@ class RequestListener implements GuzzleEventListenerInterface
             return;
         }
 
-        $hawk = \Hawk::generateHeader($this->hawkId, $this->hawkKey, $request->getMethod(), $requestUrl);
+        $credentials = new Credentials($this->hawkKey, 'sha256', $this->hawkId);
+        $client = ClientBuilder::create()->build();
+        $hawkRequest = $client->createRequest($credentials, $requestUrl, $request->getMethod());
+        $hawk = $hawkRequest->header()->fieldValue();
         $request = $request->withAddedHeader('Authorization', $hawk);
 
         $event->setTransaction($request);
