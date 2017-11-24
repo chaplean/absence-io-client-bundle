@@ -1,7 +1,7 @@
 parameters:
     chaplean_absence_io_client.api.url: 'https://app.absence.io/api/v2/'
-    chaplean_absence_io_client.api.key: '%chaplean_absence_io_client.key%'
-    chaplean_absence_io_client.api.secret: '%chaplean_absence_io_client.secret%'
+    chaplean_absence_io_client.api.hawk_id: '%chaplean_absence_io_client.hawk_id%'
+    chaplean_absence_io_client.api.hawk_key: '%chaplean_absence_io_client.hawk_key%'
 
 services:
     absence_io_api:
@@ -15,5 +15,5 @@ services:
             - { name: kernel.event_listener, event: eight_points_guzzle.pre_transaction, method: onPreTransaction, service: absence-io }
         arguments:
             - '%chaplean_absence_io_client.api.url%'
-            - '%chaplean_absence_io_client.api.key%'
-            - '%chaplean_absence_io_client.api.secret%'
+            - '%chaplean_absence_io_client.api.hawk_id%'
+            - '%chaplean_absence_io_client.api.hawk_key%'

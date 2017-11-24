@@ -28,23 +28,25 @@ class RequestListener implements GuzzleEventListenerInterface
     /**
      * @var string
      */
-    protected $key;
+    protected $hawkId;
 
     /**
      * @var string
      */
-    protected $secret;
+    protected $hawkKey;
 
     /**
      * RequestListener constructor.
      *
      * @param string $url
+     * @param string $hawkId
+     * @param string $hawkKey
      */
-    public function __construct($url, $key, $secret)
+    public function __construct($url, $hawkId, $hawkKey)
     {
         $this->url = $url;
-        $this->key = $key;
-        $this->secret = $secret;
+        $this->hawkId = $hawkId;
+        $this->hawkKey = $hawkKey;
     }
 
     /**
@@ -73,7 +75,7 @@ class RequestListener implements GuzzleEventListenerInterface
             return;
         }
 
-        $hawk = \Hawk::generateHeader($this->key, $this->secret, $request->getMethod(), $requestUrl);
+        $hawk = \Hawk::generateHeader($this->hawkId, $this->hawkKey, $request->getMethod(), $requestUrl);
         $request = $request->withAddedHeader('Authorization', $hawk);
 
         $event->setTransaction($request);

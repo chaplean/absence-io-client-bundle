@@ -42,7 +42,8 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('api')->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('url')->cannotBeEmpty()->end()
-                        ->scalarNode('access_token')->cannotBeEmpty()->end()
+                        ->scalarNode('hawk_id')->cannotBeEmpty()->end()
+                        ->scalarNode('hawk_key')->cannotBeEmpty()->end()
                     ->end()
                 ->end()
             ->end();

@@ -26,10 +26,11 @@ class ConfigurationTest extends TestCase
     {
         $container = new ContainerBuilder();
         $loader = new ChapleanAbsenceIoClientExtension();
-        $loader->load([['api' => ['url' => 'url', 'access_token' => 'token']]], $container);
+        $loader->load([['api' => ['url' => 'url', 'hawk_id' => 'hawk_id', 'hawk_key' => 'hawk_key']]], $container);
 
         $this->assertEquals('url', $container->getParameter('chaplean_absence_io_client.api.url'));
-        $this->assertEquals('token', $container->getParameter('chaplean_absence_io_client.api.access_token'));
+        $this->assertEquals('hawk_id', $container->getParameter('chaplean_absence_io_client.api.hawk_id'));
+        $this->assertEquals('hawk_key', $container->getParameter('chaplean_absence_io_client.api.hawk_key'));
     }
 
     /**
@@ -45,6 +46,7 @@ class ConfigurationTest extends TestCase
         $loader->load([[]], $container);
 
         $this->assertEquals('https://app.absence.io/api/v2/', $container->getParameter('chaplean_absence_io_client.api.url'));
-        $this->assertEquals('%chaplean_absence_io_client.access_token%', $container->getParameter('chaplean_absence_io_client.api.access_token'));
+        $this->assertEquals('%chaplean_absence_io_client.hawk_id%', $container->getParameter('chaplean_absence_io_client.api.hawk_id'));
+        $this->assertEquals('%chaplean_absence_io_client.hawk_key%', $container->getParameter('chaplean_absence_io_client.api.hawk_key'));
     }
 }

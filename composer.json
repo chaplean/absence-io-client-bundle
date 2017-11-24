@@ -1,12 +1,12 @@
 {
-    "name": "chaplean/absence-client-bundle",
+    "name": "chaplean/absence-io-client-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
-    "description": "The Bundle base to fork",
+    "description": "Absence.io Client Bundle",
     "authors": [
         {
             "name": "Chaplean",
-            "homepage": "http://www.chaplean.com"
+            "homepage": "http://www.chaplean.coop"
         }
     ],
     "autoload": {
