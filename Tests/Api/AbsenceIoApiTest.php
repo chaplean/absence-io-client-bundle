@@ -42,7 +42,7 @@ class AbsenceIoApiTest extends MockeryTestCase
     {
         $this->client = \Mockery::mock(ClientInterface::class);
         $this->eventDispatcher = \Mockery::mock(EventDispatcherInterface::class);
-        $this->api = new AbsenceIoApi($this->client, $this->eventDispatcher, 'url', 'token');
+        $this->api = new AbsenceIoApi($this->client, $this->eventDispatcher, 'url');
 
         $this->client->shouldReceive('request')
             ->andReturn(new Response(200));
@@ -117,25 +117,10 @@ class AbsenceIoApiTest extends MockeryTestCase
      *
      * @return void
      */
-    public function testAccessTokenCorrectlyConfigured()
-    {
-        $response = $this->api->getAbsence()
-            ->bindQueryParameters(['key' => 'string'])
-            ->bindUrlParameters(['id' => 42])
-            ->exec();
-
-        $this->assertNotInstanceOf(InvalidParameterResponse::class, $response);
-    }
-
-    /**
-     * @covers \Chaplean\Bundle\AbsenceIoClientBundle\Api\AbsenceIoApi::buildApi()
-     *
-     * @return void
-     */
     public function testGetAbsence()
     {
         $response = $this->api->getAbsence()
-            ->bindUrlParameters(['id' => 42])
+            ->bindUrlParameters(['id' => '42'])
             ->exec();
 
         $this->assertNotInstanceOf(InvalidParameterResponse::class, $response);

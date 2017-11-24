@@ -32,7 +32,10 @@ imports:
 ```
 
 ## 2. paramters.yml
+
+For more information about hawk see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#authentication.
+
 ```yml
-chaplean_zoho_invoice_client.access_token: 'your access token'
-chaplean_zoho_invoice_client.organization_id: 'your organization id'
+chaplean_absence_io_client.hawk_id: 'your hawk id'
+chaplean_absence_io_client.hawk_key: 'your hawk key'
 ```
