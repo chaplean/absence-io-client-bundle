@@ -43,7 +43,8 @@ class AbsenceIoApi extends AbstractApi
     public function buildApi()
     {
         $this->globalParameters()
-            ->urlPrefix($this->url);
+            ->urlPrefix($this->url)
+            ->expectsJson();
 
         $this->get('absence', 'absences/{id}')
             ->urlParameters(
@@ -52,7 +53,15 @@ class AbsenceIoApi extends AbstractApi
                 ]
             );
 
-        $this->post('absence', 'absences')
+        $this->post('searchAbsence', 'absences')
+            ->requestParameters(
+                [
+                    'skip'  => Parameter::int(),
+                    'limit' => Parameter::int()
+                ]
+            );
+
+        $this->post('absence', 'absences/create')
             ->requestParameters(
                 [
                     '_id'          => Parameter::id()

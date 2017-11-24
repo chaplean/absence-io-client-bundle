@@ -120,7 +120,7 @@ class AbsenceIoApiTest extends MockeryTestCase
     public function testGetAbsence()
     {
         $response = $this->api->getAbsence()
-            ->bindUrlParameters(['id' => 42])
+            ->bindUrlParameters(['id' => '42'])
             ->exec();
 
         $this->assertNotInstanceOf(InvalidParameterResponse::class, $response);
