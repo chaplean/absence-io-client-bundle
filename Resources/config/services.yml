@@ -1,12 +1,19 @@
 parameters:
-    chaplean_absence_io_client.api.access_token: '%chaplean_absence_io_client.access_token%'
     chaplean_absence_io_client.api.url: 'https://app.absence.io/api/v2/'
+    chaplean_absence_io_client.api.key: '%chaplean_absence_io_client.key%'
+    chaplean_absence_io_client.api.secret: '%chaplean_absence_io_client.secret%'
 
 services:
     absence_io_api:
         class: Chaplean\Bundle\AbsenceIoClientBundle\Api\AbsenceIoApi
         arguments:
-            - '@guzzle.client.absence_io_api'
-            - '@event_dispatcher'
             - '%chaplean_absence_io_client.api.url%'
-            - '%chaplean_absence_io_client.api.access_token%'
+
+    abscence_io_api.request_listener:
+        class: Chaplean\Bundle\AbsenceIoClientBundle\EventListener\RequestListener
+        tags:
+            - { name: kernel.event_listener, event: eight_points_guzzle.pre_transaction, method: onPreTransaction, service: absence-io }
+        arguments:
+            - '%chaplean_absence_io_client.api.url%'
+            - '%chaplean_absence_io_client.api.key%'
+            - '%chaplean_absence_io_client.api.secret%'

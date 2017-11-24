@@ -1,4 +1,5 @@
 <?php
+
 namespace Chaplean\Bundle\AbsenceIoClientBundle\Api;
 
 use Chaplean\Bundle\RestClientBundle\Api\AbstractApi;
@@ -15,8 +16,9 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class AbsenceIoApi extends AbstractApi
 {
-    protected $token;
-
+    /**
+     * @var string
+     */
     protected $url;
 
     /**
@@ -25,11 +27,9 @@ class AbsenceIoApi extends AbstractApi
      * @param ClientInterface          $caller
      * @param EventDispatcherInterface $eventDispatcher
      * @param string                   $url
-     * @param string|null              $accessToken
      */
-    public function __construct(ClientInterface $caller, EventDispatcherInterface $eventDispatcher, $url, $accessToken = null)
+    public function __construct(ClientInterface $caller, EventDispatcherInterface $eventDispatcher, $url)
     {
-        $this->token = $accessToken;
         $this->url = $url;
 
         parent::__construct($caller, $eventDispatcher);
@@ -43,13 +43,7 @@ class AbsenceIoApi extends AbstractApi
     public function buildApi()
     {
         $this->globalParameters()
-            ->urlPrefix($this->url)
-            ->queryParameters(
-                [
-                    'key' => Parameter::string()
-                        ->defaultValue($this->token),
-                ]
-            );
+            ->urlPrefix($this->url);
 
         $this->get('absence', 'absences/{id}')
             ->urlParameters(
