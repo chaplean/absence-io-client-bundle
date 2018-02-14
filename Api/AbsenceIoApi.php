@@ -216,7 +216,7 @@ class AbsenceIoApi extends AbstractApi
         $this->get('reason', 'reasons/{id}')
             ->urlParameters(
                 [
-                    'id' => Parameter::id()
+                    'id' => Parameter::string()
                 ]
             );
 
