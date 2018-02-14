@@ -8,17 +8,11 @@
     "packages": [
         {
             "name": "chaplean/rest-client-bundle",
-            "version": "v1.0.2",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://bitbucket.org/chaplean/rest-client-bundle.git",
-                "reference": "60334dcb183e0b145081898c560751906f244cd4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/chaplean/rest-client-bundle/get/60334dcb183e0b145081898c560751906f244cd4.zip",
-                "reference": "60334dcb183e0b145081898c560751906f244cd4",
-                "shasum": ""
+                "url": "https://git.chaplean.coop/open-source/bundle/rest-client-bundle.git",
+                "reference": "e7fca7d9628db507488d3724f0f970db2aae8060"
             },
             "require": {
                 "eightpoints/guzzle-bundle": "^5.3 || ^6.0",
@@ -58,8 +52,7 @@
                 }
             ],
             "description": "Create a Restful API Client quickly",
-            "homepage": "https://bitbucket.org/chaplean/rest-client-bundle",
-            "time": "2017-11-09T16:49:00+00:00"
+            "time": "2017-12-08T16:15:40+00:00"
         },
         {
             "name": "dflydev/hawk",
@@ -1731,12 +1724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "ff6f0691b7c3c122c1665ff67d0f9d205ed2c83a"
+                "reference": "e31058450086c3668a94ec7925c102e92eb32cc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/ff6f0691b7c3c122c1665ff67d0f9d205ed2c83a",
-                "reference": "ff6f0691b7c3c122c1665ff67d0f9d205ed2c83a",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/e31058450086c3668a94ec7925c102e92eb32cc0",
+                "reference": "e31058450086c3668a94ec7925c102e92eb32cc0",
                 "shasum": ""
             },
             "require": {
@@ -1745,7 +1738,7 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5.7|~6.1"
+                "phpunit/phpunit": "~5.7.10|~6.5"
             },
             "type": "library",
             "extra": {
@@ -1774,7 +1767,7 @@
                     "homepage": "http://davedevelopment.co.uk"
                 }
             ],
-            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succinct API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
+            "description": "Mockery is a simple yet flexible PHP mock object framework",
             "homepage": "https://github.com/mockery/mockery",
             "keywords": [
                 "BDD",
@@ -1788,7 +1781,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2017-11-22 15:50:10"
+            "time": "2018-02-14T07:58:52+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2620,7 +2613,7 @@
                 "github",
                 "test"
             ],
-            "time": "2017-10-14 23:16:28"
+            "time": "2017-10-14T23:16:28+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
