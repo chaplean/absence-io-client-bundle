@@ -33,7 +33,7 @@ new Chaplean\Bundle\AbsenceIoClientBundle\ChapleanAbsenceIoClientBundle(),
 
 ## Configuration
 
-First you will need to import bundle configuration.
+First you will need to import the bundle configuration.
 
 config.yml:
 ```yaml
@@ -54,18 +54,7 @@ For more information about hawk see https://documenter.getpostman.com/view/79922
 
 ## Usage
 
-Here is an example of how to use the getProject route.
-
-```php
-$response = $absenceIoApi->getAbsence()
-    ->bindUrlParameters(['id' => '56df2d3eaaac717e42f07115'])
-    ->exec();
-    
-if ($response->succeeded()) {
-    $content = $response->getContent();
-    // your code
-}
-```
+See the rest-client-bundle's [usage documentation](https://github.com/chaplean/rest-client-bundle#using-a-bundle-based-on-rest-client-bundle).
 
 ### Available functions:
 
