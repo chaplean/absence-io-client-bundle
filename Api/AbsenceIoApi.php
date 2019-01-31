@@ -2,8 +2,8 @@
 
 namespace Chaplean\Bundle\AbsenceIoClientBundle\Api;
 
-use Chaplean\Bundle\RestClientBundle\Api\AbstractApi;
-use Chaplean\Bundle\RestClientBundle\Api\Parameter;
+use Chaplean\Bundle\ApiClientBundle\Api\AbstractApi;
+use Chaplean\Bundle\ApiClientBundle\Api\Parameter;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
