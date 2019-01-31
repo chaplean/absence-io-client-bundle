@@ -6,6 +6,7 @@
 /app/config/parameters.yml
 
 # Managed by Composer
+auth.json
 /bin/*
 !bin/console
 !bin/phpunit.sh
