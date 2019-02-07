@@ -3,7 +3,6 @@
 namespace Chaplean\Bundle\AbsenceIoClientBundle\Tests\Api;
 
 use Chaplean\Bundle\AbsenceIoClientBundle\Api\AbsenceIoApi;
-use Chaplean\Bundle\ApiClientBundle\Api\RequestRoute;
 use Chaplean\Bundle\ApiClientBundle\Api\Response\Failure\InvalidParameterResponse;
 use Chaplean\Bundle\ApiClientBundle\Api\Route;
 use GuzzleHttp\ClientInterface;
@@ -82,13 +81,13 @@ class AbsenceIoApiTest extends MockeryTestCase
      */
     public function testPostRoutes()
     {
-        $this->assertInstanceOf(RequestRoute::class, $this->api->postAbsence());
-        $this->assertInstanceOf(RequestRoute::class, $this->api->postAllowanceType());
-        $this->assertInstanceOf(RequestRoute::class, $this->api->postDeparment());
-        $this->assertInstanceOf(RequestRoute::class, $this->api->postLocation());
-        $this->assertInstanceOf(RequestRoute::class, $this->api->postReason());
-        $this->assertInstanceOf(RequestRoute::class, $this->api->postTeam());
-        $this->assertInstanceOf(RequestRoute::class, $this->api->postUser());
+        $this->assertInstanceOf(Route::class, $this->api->postAbsence());
+        $this->assertInstanceOf(Route::class, $this->api->postAllowanceType());
+        $this->assertInstanceOf(Route::class, $this->api->postDeparment());
+        $this->assertInstanceOf(Route::class, $this->api->postLocation());
+        $this->assertInstanceOf(Route::class, $this->api->postReason());
+        $this->assertInstanceOf(Route::class, $this->api->postTeam());
+        $this->assertInstanceOf(Route::class, $this->api->postUser());
     }
 
     /**
@@ -98,8 +97,8 @@ class AbsenceIoApiTest extends MockeryTestCase
      */
     public function testPutRoutes()
     {
-        $this->assertInstanceOf(RequestRoute::class, $this->api->putUser());
-        $this->assertInstanceOf(RequestRoute::class, $this->api->putAbsence());
+        $this->assertInstanceOf(Route::class, $this->api->putUser());
+        $this->assertInstanceOf(Route::class, $this->api->putAbsence());
     }
 
     /**
