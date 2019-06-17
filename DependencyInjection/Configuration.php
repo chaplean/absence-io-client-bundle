@@ -1,4 +1,13 @@
 <?php
+/*
+ *
+ * This file is part of the AbsenceIoClientBundle package.
+ *
+ * (c) Chaplean.coop <contact@chaplean.coop>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Chaplean\Bundle\AbsenceIoClientBundle\DependencyInjection;
 
@@ -7,11 +16,9 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * This is the class that validates and merges configuration from your app/config files
- *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
+ * This class contains the configuration information for the bundle.
  */
-class Configuration implements ConfigurationInterface
+final class Configuration implements ConfigurationInterface
 {
     /**
      * @return TreeBuilder

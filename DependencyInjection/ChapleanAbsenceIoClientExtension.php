@@ -1,4 +1,13 @@
 <?php
+/*
+ *
+ * This file is part of the AbsenceIoClientBundle package.
+ *
+ * (c) Chaplean.coop <contact@chaplean.coop>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Chaplean\Bundle\AbsenceIoClientBundle\DependencyInjection;
 
@@ -7,11 +16,6 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
-/**
- * This is the class that loads and manages your bundle configuration
- *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
- */
 class ChapleanAbsenceIoClientExtension extends Extension
 {
     /**
@@ -19,6 +23,7 @@ class ChapleanAbsenceIoClientExtension extends Extension
      * @param ContainerBuilder $container
      *
      * @return void
+     * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container)
     {
