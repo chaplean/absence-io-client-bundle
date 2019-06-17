@@ -2,10 +2,10 @@ image: chaplean/php:7.1-no-xdebug
 
 cache:
     paths:
-    - vendor/
+        - vendor/
 
 before_script:
-- composer install --prefer-dist --no-interaction
+    - composer install --prefer-dist --no-interaction
 
 test:
     stage: test
