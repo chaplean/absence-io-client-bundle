@@ -25,8 +25,10 @@ final class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('chaplean_absence_io_client');
-        $this->addApiConfiguration($treeBuilder->getRootNode());
+        $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('chaplean_absence_io_client');
+
+        $this->addApiConfiguration($rootNode);
 
         return $treeBuilder;
     }
